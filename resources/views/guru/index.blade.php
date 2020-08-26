@@ -21,7 +21,6 @@
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
-                                <input type="hidden" name="nama_guru" value="{{ Auth::user()->name }}">
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <div class="form-group">
                                     <label for="fel">Masukan File :</label>
@@ -62,7 +61,7 @@
                         @forelse ($data as $row)
                             <tr>
                                 <td>{{ $loop->iteration + $data->firstItem() - 1 . '.'}}</td>
-                                <td>{{ $row->nama_guru }}</td>
+                                <td>{{ $row->user->name }}</td>
                                 <td>{{ $row->mapel }}</td>
                                 <td>
                                     @if ($row->status == 0)
