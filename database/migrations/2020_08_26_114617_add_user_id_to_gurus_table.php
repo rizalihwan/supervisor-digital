@@ -14,7 +14,7 @@ class AddUserIdToGurusTable extends Migration
     public function up()
     {
         Schema::table('gurus', function (Blueprint $table) {
-            //
+            $table->foreignId('user_id')->after('mapel')->unsigned();
         });
     }
 
@@ -26,7 +26,7 @@ class AddUserIdToGurusTable extends Migration
     public function down()
     {
         Schema::table('gurus', function (Blueprint $table) {
-            //
+            $table->dropColumn('user_id');
         });
     }
 }
