@@ -37,14 +37,13 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(), [
-            'nama_guru' => 'required|max:70|string',
 			'mapel' => 'required',
+            'user_id' => 'required|max:70|string',
             'file' => 'required'
         ]);
         $nm = $request->file;
         $namaFile = time().rand(100,999).".".$nm->getClientOriginalName();
         $data = new Guru;
-        $data->nama_guru = $request->nama_guru;
         $data->mapel = $request->mapel;
         $data->user_id = $request->user_id;
         $data->status = $request->status;
