@@ -18,7 +18,7 @@
                         @forelse ($data as $row)
                             <tr>
                                 <td>{{ $loop->iteration + $data->firstItem() - 1 . '.' }}</td>
-                                <td>{{ $row->nama_guru }}</td>
+                                <td>{{ $row->user->name }}</td>
                                 <td><a href="{{ asset('files/' . $row->file) }}" rel="noopener noreferrer" target="_blank">Lihat Materi</a></td>
                                 <td>
                                     @if ($row->status == 0)

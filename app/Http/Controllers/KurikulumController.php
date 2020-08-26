@@ -12,6 +12,7 @@ class KurikulumController extends Controller
      */
     public function validateReq()
     {
+        // validate Req
         return $this->validate(request(), [
             'hari' => ['required'],
             'nama_guru' => ['required', 'max:50'],
@@ -26,6 +27,7 @@ class KurikulumController extends Controller
      */
     public function day()
     {
+        // For days
         return ['senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'];
     }
 

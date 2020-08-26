@@ -62,7 +62,7 @@ class SupervisorController extends Controller
     public function update(Request $request, $id)
     {
         $data = Guru::findOrFail($id);
-        $data->nama_guru = $request->nama_guru;
+        $data->user_id = $request->user_id;
         $data->mapel = $request->mapel;
         $data->file = $request->file;
         $data->status = $request->status;

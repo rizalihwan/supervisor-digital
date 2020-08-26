@@ -10,11 +10,11 @@
                     @method('PUT')
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <input type="hidden" name="nama_guru" value="{{ $data->nama_guru }}">
+                            <input type="hidden" name="user_id" value="{{ $data->user_id }}">
                             <input type="hidden" name="mapel" value="{{ $data->mapel }}">
                             <input type="hidden" name="file" value="{{ $data->file }}">
                             <br/>
-                            <label for="stat">Keputusan Penilaian untuk guru : {{ $data->nama_guru }}</label>
+                            <label for="stat">Keputusan Penilaian untuk guru : {{ $data->user->name }}</label>
                             <select name="status" id="stat" class="form-control">
                                 <option value="0">Belum Dikonfirmasi</option>
                                 <option value="1">Lulus Penilaian</option>
