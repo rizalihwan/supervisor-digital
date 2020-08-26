@@ -46,6 +46,7 @@ class GuruController extends Controller
         $data = new Guru;
         $data->nama_guru = $request->nama_guru;
         $data->mapel = $request->mapel;
+        $data->user_id = $request->user_id;
         $data->status = $request->status;
         $data->file = $namaFile;
         $nm->move(public_path().'/files', $namaFile);

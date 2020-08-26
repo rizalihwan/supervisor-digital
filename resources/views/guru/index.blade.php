@@ -22,6 +22,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <input type="hidden" name="nama_guru" value="{{ Auth::user()->name }}">
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <div class="form-group">
                                     <label for="fel">Masukan File :</label>
                                     <input type="file" name="file" id="fel" class="form-control" required>
