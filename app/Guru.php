@@ -9,4 +9,9 @@ class Guru extends Model
     protected $fillable = [
         'nama_guru', 'mapel', 'user_id', 'file', 'status'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
