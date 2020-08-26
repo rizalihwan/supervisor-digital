@@ -2,7 +2,7 @@
 @section('content')
     <div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
-			<h3 class="text-center">App|Suvervisor</h3>
+			<h3 class="text-center">App|Supervisor</h3>
             <div class="login-form">
                 <form action="{{ route('login') }}" method="post">
                     @csrf

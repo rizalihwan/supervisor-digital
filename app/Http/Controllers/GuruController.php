@@ -38,6 +38,7 @@ class GuruController extends Controller
     {
         $this->validate(request(), [
             'nama_guru' => 'required|max:70|string',
+			'mapel' => 'required',
             'file' => 'required'
         ]);
         $nm = $request->file;
