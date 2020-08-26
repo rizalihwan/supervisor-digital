@@ -17,7 +17,7 @@
                         @forelse ($data as $row)
                             <tr>
                                 <td>{{ $loop->iteration + $data->firstItem() - 1 . '.'}}</td>
-                                <td>{{ $row->nama_guru }}</td>
+                                <td>{{ $row->user->name }}</td>
                                 <td>{{ $row->mapel }}</td>
                                 <td>
                                     @if ($row->status == 0)

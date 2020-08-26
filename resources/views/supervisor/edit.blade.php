@@ -16,9 +16,9 @@
                             <br/>
                             <label for="stat">Keputusan Penilaian untuk guru : {{ $data->user->name }}</label>
                             <select name="status" id="stat" class="form-control">
-                                <option value="0">Belum Dikonfirmasi</option>
-                                <option value="1">Lulus Penilaian</option>
-                                <option value="2">Tidak Lulus</option>
+                                <option value="0" @if($data->status == 0) selected @endif>Belum Dikonfirmasi</option>
+                                <option value="1" @if($data->status == 1) selected @endif>Lulus Penilaian</option>
+                                <option value="2" @if($data->status == 2) selected @endif>Tidak Lulus</option>
                             </select>
                         </div>
                         <div class="form-group">
