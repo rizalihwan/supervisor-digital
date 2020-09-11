@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use \App\Guru, \App\Kurikulum;
 class GuruController extends Controller
 {
+    // this for rules authentication
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
