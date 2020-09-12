@@ -6,12 +6,6 @@ use \App\Kurikulum;
 use PDF;
 class KepsekController extends Controller
 {
-    // this for rules authentication
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $data = Kurikulum::latest()->get();

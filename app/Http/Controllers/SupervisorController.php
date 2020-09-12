@@ -6,12 +6,6 @@ use Illuminate\Http\Request;
 use \App\Guru;
 class SupervisorController extends Controller
 {
-    // this for rules authentication
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *

@@ -5,12 +5,6 @@ namespace App\Http\Controllers;
 use \App\Guru, \App\Kurikulum;
 class KurikulumController extends Controller
 {
-    // this for rules authentication
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
