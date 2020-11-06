@@ -13,7 +13,7 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $data = Guru::latest()->paginate(5);
+        $data = Guru::where('user_id', auth()->user()->id)->latest()->paginate(5);
         return view('guru.index', compact('data'));
     }
 

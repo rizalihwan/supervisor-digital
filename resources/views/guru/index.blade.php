@@ -79,10 +79,7 @@
                                     <form action="{{ route('guru.destroy', $row->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        {{-- validate for button delete access --}}
-                                        @if ($row->user_id == Auth::user()->id)
                                         <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></button>
-                                        @endif
                                         {{-- end validate --}}
                                     </form>
                                 </td>
