@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use \Faker\Factory as Faker;
-use Illuminate\Support\Facades\Hash;
+use \App\user;
 
 class userSeeder extends Seeder
 {
@@ -13,16 +12,13 @@ class userSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
-        for ($a = 0; $a <= 1; $a++) {
-            DB::table('users')->insert([
+        User::create([
                 'name' => 'test guru',
                 'role' => 'guru',
-                'email' => $faker->email,
-                'password' => bcrypt('test123'),
-                'created_at' => $faker->dateTime,
-                'updated_at' => $faker->dateTime
-            ]);
-        }
+                'email' => 'rizalihwan94@gmail.com',
+                'password' => bcrypt('password'),
+                'created_at' => now(),
+                'updated_at' => now()
+        ]);
     }
 }
