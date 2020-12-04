@@ -3,11 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 // AUTH
-Route::middleware('guest')->group(function(){
-    Route::get('/', function () {
-        return view('auth.login');
-    });
-});
+Route::get('/', function () {
+    return view('auth.login');
+})->middleware('guest');
 
 Auth::routes();
 
