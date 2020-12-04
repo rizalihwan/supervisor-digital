@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 // AUTH
-Route::get('/', function () {
-    return view('auth.login');
+Route::middleware('guest')->group(function(){
+    Route::get('/', function () {
+        return view('auth.login');
+    });
 });
+
 Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function() {
