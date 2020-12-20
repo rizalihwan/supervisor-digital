@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'PageSupervisor'])
+{{-- @extends('layouts.app', ['title' => 'PageSupervisor'])
 @section('content')
 <div class="container-fluid">
     <!-- Content Row -->
@@ -31,4 +31,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

@@ -24,7 +24,9 @@ Route::middleware('auth')->group(function() {
     Route::prefix('supervisor')->middleware('checkRole:supervisor')->name('supervisor.')->group(function(){
         Route::get('/supervisor_nilai', 'SupervisorController@index')->name('index');
         Route::get('/supervisor_edit/{id}', 'SupervisorController@edit')->name('edit');
-        Route::put('/supervisor_update/{id}', 'SupervisorController@update')->name('update');
+        // Route::put('/supervisor_update/{id}', 'SupervisorController@update')->name('update');
+        Route::PATCH('/supervisor_lulus/{id}', 'SupervisorController@lulus')->name('lulus');
+        Route::PATCH('/supervisor_Tidaklulus/{id}', 'SupervisorController@Tidaklulus')->name('Tidaklulus');
     });
 
     // KURIKULUM

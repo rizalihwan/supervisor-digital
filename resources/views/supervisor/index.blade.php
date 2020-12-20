@@ -22,17 +22,29 @@
                                 <td><a href="{{ asset('files/' . $row->file) }}" rel="noopener noreferrer" target="_blank">Lihat Materi</a></td>
                                 <td>
                                     @if ($row->status == 0)
-                                        <span class="badge badge-danger">{{ 'Belum Dikonfirmasi' }}</span>
+                                        <span class="badge badge-warning">{{ 'Belum Dikonfirmasi' }}</span>
                                     @endif
                                     @if ($row->status == 1)
                                         <span class="badge badge-success">{{ 'Lulus Penilaian' }}</span>
                                     @endif
                                     @if ($row->status == 2)
-                                        <span class="badge badge-warning">{{ 'Belum Lulus' }}</span>
+                                        <span class="badge badge-danger">{{ 'Tidak Lulus' }}</span>
                                     @endif
                                 </td>
                                 <td>{{ $row->created_at->format('d F, Y') . ' ' . $row->created_at->diffForHumans() }}</td>
-                                <td><a href="{{ route('supervisor.edit', $row->id) }}">Beri Nilai</a></td>
+                                <td>
+                                    <form action="{{ route('supervisor.lulus', $row->id) }}" method="post">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-success">Lulus</button>
+                                    </form>
+                                    <form action="{{ route('supervisor.Tidaklulus', $row->id) }}" method="post">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-danger">Tidak Lulus</button>
+                                    </form>
+                                </td>
+                                {{-- <td><a href="{{ route('supervisor.edit', $row->id) }}">Beri Nilai</a></td> --}}
                             </tr>
                         @empty
                             <tr>
